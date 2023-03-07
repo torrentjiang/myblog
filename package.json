@@ -68,5 +68,8 @@
   },
   "authors": [
     "torrent_jiang@163.com"
-  ]
+  ],
+  "dependencies": {
+    "github-webhook-handler": "^1.0.0"
+  }
 }
