@@ -14,15 +14,11 @@ react、markdown、dumi2.0、webhook
 ## 自动化部署流程
 
 [webhook](https://docs.github.com/en/webhooks-and-events/webhooks/about-webhooks)
-服务器监听 git push 提交代码
-↓
-执行 git pull 操作拉取最新代码
-↓
-npm install，项目可能会有新加的 npm 包
-↓
-npm run docs:build
-↓
-重启 nginx 服务
+* 服务器监听 git push 提交代码
+* 执行 git pull 操作拉取最新代码
+* npm install，项目可能会有新加的 npm 包
+* npm run docs:build
+* 重启 nginx 服务
 
 ## 执行脚本
 
