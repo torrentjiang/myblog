@@ -6,7 +6,7 @@ toc: content
 
 ## fiddler 抓取 https 请求
 
-### 一. 网页不安全
+### 1. 网页不安全
 
 <img src="./images/8_004.png" width="600px">
 
@@ -94,7 +94,7 @@ toc: content
 
 <img src="./images/8_022.png" width="600px">
 
-### 三. 接口测试（Composer）
+### 3. 接口测试（Composer）
 
 Fiddler 最大的优势在于抓包，我们大部分使用的功能也在抓包的功能上，fiddler 做接口测试也是非常方便的。
 对应没有接口测试文档的时候，可以直接抓完包后，copy 请求参数，修改下就可以了。
@@ -123,7 +123,7 @@ https://marketing-dev.saicmobility.com/mis-h5/couponPackageList
 主要用途：测试接口请求
 ```
 
-### 模拟 get 请求
+#### 模拟 get 请求
 
 1.在 Composer 区域地址栏输入博客首页：https://www.baidu.com/ 2.选择 get 请求，点 Execute 执行，请求就可以发送成功啦 3.请求发送成功后，左边会话框会生成一个会话记录，可以查看抓包详情(双击) 4.右侧 history 区域会多一个历史请求记录 5.会话框选中该记录，查看测试结果：
 
@@ -137,7 +137,7 @@ https://marketing-dev.saicmobility.com/mis-h5/couponPackageList
 
 <img src="./images/8_025.png" width="600px">
 
-### 模拟 post 请求
+#### 模拟 post 请求
 
 1.请求类型勾选 post
 2.url 地址栏输入对应的请求地址
@@ -154,19 +154,19 @@ https://marketing-dev.saicmobility.com/mis-h5/couponPackageList
 message=Invalid length for a Base-64 char array or string.
 success=False
 
-### 二. fiddler 设置
+### 4. fiddler 设置
 
 1.打开菜单栏：Tools>Fiddler Options>HTTPS 2.勾选 Decrypt HTTPS traffic，里面的两个子菜单也一起勾选了
 
 <img src="./images/8_005.png" width="600px">
 
-### 三. 导出证书
+### 5. 导出证书
 
 1.点右上角 Actions 按钮 2.选第二个选项，导出到桌面，此时桌面上会多一个文件：FiddlerRoot.cer,如图。
 
 <img src="./images/8_006.png" width="600px">
 
-### 四. 导入到浏览器
+### 6. 导入到浏览器
 
 1.打开右上角浏览器设置》选项》高级》证书》查看证书》证书机构》导入
 
@@ -184,14 +184,14 @@ success=False
 ps: 不生效重启浏览器
 ```
 
-### 五. 抓取 app 请求
+### 7. 抓取 app 请求
 
-##### 前言
+#### 前言
 
 fiddler 在抓手机 app 的请求时候，通常也会抓到来自 PC 的请求，导致会话消息太多，那么如何把来自 pc 的请求过滤掉，只抓来自 APP 的请求呢？
 必备环境： 1.电脑上已装 fiddler 2.手机和电脑在同一局域网
 
-##### 设置
+#### 设置
 
 1.fiddler>Tools>Fiddler Options>Connections 勾选 Allow remote computers to connect。
 
@@ -235,15 +235,15 @@ from remote clients only:只抓远程客户端请求
 
 <img src="./images/8_014.png" width="600px">
 
-### get 请求
+#### get 请求
 
 <img src="./images/8_015.png" width="600px">
 
-### post 请求
+#### post 请求
 
 <img src="./images/8_016.png" width="600px">
 
-### 如何找出需要的请求？
+#### 如何找出需要的请求？
 
 1.打开 fiddler 后，左边会话框区域刷刷刷的很多请求，那么如何有效的找出自己需要的请求呢？ 2.首先第一步：清屏（cls）,在左下角命令行输入 cls，清空屏幕
 （清屏也可以使用快捷键 Ctrl+X）
@@ -255,21 +255,21 @@ from remote clients only:只抓远程客户端请求
 
 4.如上图，红色框框这个地方就是 host 地址，红色圈圈地方就是 url 的路径（yoyoketang），也就是博客首页的地址了，那这个请求就是博客首页的请求了。
 
-### 比较 get 和 post 请求
+#### 比较 get 和 post 请求
 
-### 如何修改请求
+#### 如何修改请求
 
 bpu
 
-## 产线代码调试
+### 8.产线代码调试
 
-### 方式一：fiddler
+#### 方式一：fiddler
 
-### 方式二
+#### 方式二
 
 SourceMapDevToolPlugin
 
-#### 先看效果
+##### 先看效果
 
 - 配置前
 
@@ -279,7 +279,7 @@ SourceMapDevToolPlugin
 
 <img src="./images/8_002.png">
 
-#### 1. 配置 webpack.prod.js
+##### 1. 配置 webpack.prod.js
 
 ```js
 // webpack.prod.js
@@ -294,7 +294,7 @@ SourceMapDevToolPlugin
 }
 ```
 
-#### 2. 代理劫持(fiddler/charles)
+##### 2. 代理劫持(fiddler/charles)
 
 ```
 regex:(?inx)^http://fakesourcemap.com/(?<args>.*)$
