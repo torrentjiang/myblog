@@ -1,22 +1,35 @@
 const http = require('http');
 const createHandler = require('github-webhook-handler');
 const handler = createHandler({ path: '/webhook', secret: 'myhashsecret' });
+const log4js = require('log4js');
+const log4jsConfig = require('./log.config.js');
+
+// 配置日志
+log4js.configure(log4jsConfig);
+const logger = log4js.getLogger();
 
 http
   .createServer(function (req, res) {
     handler(req, res, function (err) {
       res.statusCode = 404;
-      res.end('no such location');
+      // res.end('no such location');
     });
   })
   .listen(7777);
 
 handler.on('error', function (err) {
   console.error('Error:', err.message);
+  logger.debug(err.message);
 });
 
 handler.on('push', function (event) {
   console.log(
+    'Received a push event for %s to %s',
+    event.payload.repository.name,
+    event.payload.ref,
+  );
+
+  logger.info(
     'Received a push event for %s to %s',
     event.payload.repository.name,
     event.payload.ref,

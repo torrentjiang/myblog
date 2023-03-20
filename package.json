@@ -43,6 +43,10 @@
       "prettier --parser=typescript --write"
     ]
   },
+  "dependencies": {
+    "github-webhook-handler": "^1.0.0",
+    "log4js": "^6.9.1"
+  },
   "devDependencies": {
     "@commitlint/cli": "^17.1.2",
     "@commitlint/config-conventional": "^17.1.0",
@@ -68,8 +72,5 @@
   },
   "authors": [
     "torrent_jiang@163.com"
-  ],
-  "dependencies": {
-    "github-webhook-handler": "^1.0.0"
-  }
+  ]
 }
