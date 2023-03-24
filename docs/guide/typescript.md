@@ -5,7 +5,7 @@ nav:
   order: -1
 group:
   title: js基础
-  order: 2
+  order: 1
 title: typescript类型体操
 ---
 
