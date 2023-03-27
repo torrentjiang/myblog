@@ -35,7 +35,7 @@ handler.on('push', function (event) {
     event.payload.ref,
   );
   // 执行autoBuild.sh
-  run_cmd('sh', ['./test/autoBuild.sh'], function (text) {
+  run_cmd('sh', ['./test/index.sh'], function (text) {
     console.log(text);
   });
 });
@@ -43,7 +43,9 @@ handler.on('push', function (event) {
 // 新增run_cmd 执行脚本函数
 function run_cmd(cmd, args, callback) {
   let spawn = require('child_process').spawn;
-  let child = spawn(cmd, args);
+  let child = spawn(cmd, args, {
+    shell: '/bin/bash',
+  });
   let resp = '';
 
   child.stdout.on('data', function (buffer) {
