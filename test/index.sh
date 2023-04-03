@@ -1,5 +1,5 @@
 echo "hello world"
-cd /test
+cd ./test
 npm install
 # git pull origin master      # 拉取最新代码
 # npm install                 # 安装依赖
