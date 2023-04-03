@@ -1,7 +1,7 @@
 ---
 title: torrent个人主页
 hero:
-  title: Welcome
+  title: hey man
   description: It's better to be clear than to be clever
   # actions:
   #   - text: Hello
