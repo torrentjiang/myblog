@@ -35,7 +35,7 @@ handler.on('push', function (event) {
     event.payload.ref,
   );
   // 执行autoBuild.sh
-  run_cmd('sh', ['./test/index.sh'], function (text) {
+  run_cmd('sh', ['./autoBuild.sh'], function (text) {
     console.log(text);
   });
 });
