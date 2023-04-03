@@ -11,7 +11,7 @@ hero:
 features:
   - title: 学习文档
     emoji: 📃
-    description: 你想要造火箭?
+    description: 你不会想要造火箭吧?
   - title: 个人简介
     emoji: 👷‍♂️
     description: 勤勤恳恳的搬砖仔罢了
