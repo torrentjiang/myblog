@@ -10,10 +10,10 @@ hero:
   #   link: /
 features:
   - title: 在线文档
-    emoji: 💎
+    emoji: 📃
     description: Documents
   - title: 个人简介
-    emoji: 🌈
+    emoji: 👷‍♂️
     description: Personal Profile
   - title: 项目展示
     emoji: 🚀
