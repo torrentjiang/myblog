@@ -2,16 +2,14 @@
 title: torrent个人主页
 hero:
   title: hey man
-  description: It's better to be clear than to be clever
-  # actions:
-  #   - text: Hello
-  #     link: /
-  # - text: World
-  #   link: /
+  description: It's better to be clear than to be clever !
 features:
   - title: 学习文档
     emoji: 📃
     description: 你不会想要造火箭吧?
+  - title: 算法
+    emoji: 💡
+    description: 算法都不会? 回去等通知吧
   - title: 个人简介
     emoji: 👷‍♂️
     description: 勤勤恳恳的搬砖仔罢了
