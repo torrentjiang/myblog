@@ -4,12 +4,13 @@ nav:
   title: 学习文档
   order: -1
 group:
-  title: js基础
-  order: 1
-title: typescript类型体操
+  title: typescript操练场
+  order: 2
+title: 常见用法介绍
+order: 1
 ---
 
-# typescript 常见用法介绍
+# 常见用法介绍
 
 ### 什么是 ts？
 

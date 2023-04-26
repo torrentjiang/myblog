@@ -1,8 +1,8 @@
 ---
-title: torrent个人主页
+title: torrent homePage
 hero:
-  title: hey man
-  description: It's better to be clear than to be clever !
+  title: Coding man
+  description: It's better to be clear than to be clever
 features:
   - title: 学习文档
     emoji: 📃
