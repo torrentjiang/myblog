@@ -6,12 +6,12 @@ export default defineConfig({
   locales: [{ id: 'zh-CN', name: '中文' }],
   outputPath: 'docs-dist',
   sitemap: { hostname: 'http://www.torrentjiang.store' },
-  socialLinks: {
-    github: 'https://github.com/torrentjiang/myblog',
-  },
   themeConfig: {
     logo: '/logo.png',
     name: 'torrent',
     footer: '我沪ICP备2022034341号',
+    socialLinks: {
+      github: 'https://github.com/torrentjiang/myblog',
+    },
   },
 });
