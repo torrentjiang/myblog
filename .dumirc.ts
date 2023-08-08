@@ -11,7 +11,7 @@ export default defineConfig({
   themeConfig: {
     logo: '/home/logo.png',
     name: 'torrent',
-    footer: '我沪ICP备2022034341号',
+    footer: '沪ICP备2022034341号',
     socialLinks: {
       github: 'https://github.com/torrentjiang/myblog',
     },

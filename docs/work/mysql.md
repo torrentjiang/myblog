@@ -6,6 +6,14 @@ toc: content
 
 MySQL 日常使用命令 增删改查 权限分配 导入导出等
 
+### 启动 MySQL
+
+service mysqld start
+
+### 查看 MySQL 状态
+
+service mysqld status
+
 ### 连接 MySQL
 
 格式： `mysql -h(host) -u(user) －p(password)`
@@ -127,12 +135,6 @@ RIGHT JOIN table2 ON table1.column_name = table2.column_name;
 SELECT *
 FROM table1
 FULL JOIN table2 ON table1.column_name = table2.column_name;
-```
-
-###
-
-```
-UPDATE ecs_touch_sale_statistics SET add_time = UNIX_TIMESTAMP(CONCAT(`year`,`month`,`day`))
 ```
 
 #### mysqldump 命令
