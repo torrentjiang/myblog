@@ -5,8 +5,8 @@ export default defineConfig({
   autoAlias: false,
   locales: [{ id: 'zh-CN', name: '中文' }],
   outputPath: 'docs-dist',
-  publicPath: '/profile/',
-  base: '/profile',
+  publicPath: '/home/',
+  base: '/home',
   sitemap: { hostname: 'https://www.torrentjiang.store' },
   themeConfig: {
     logo: '/profile/logo.png',
