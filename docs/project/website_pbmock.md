@@ -9,15 +9,19 @@ toc: content
 
 ## pbmock_web
 
+### web 管理平台
+
 ![pbmock_web](./images/pb_mock.png)
 
 [访问地址](http://www.torrentjiang.store/pbmock/)
 
-[仓库](https://github.com/torrentjiang/pbmock)
+[github](https://github.com/torrentjiang/pbmock)
 
 ## pbmock_node
 
-[仓库](https://github.com/torrentjiang/pbmock_node)
+### node 支撑服务
+
+[github](https://github.com/torrentjiang/pbmock_node)
 
 <!--
     快速拉取pb文件，解析内容，生成接口（减少90%的读pb拼接数据的工作）

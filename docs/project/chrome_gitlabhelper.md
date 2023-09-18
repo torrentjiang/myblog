@@ -8,4 +8,4 @@ group: Chrome插件
 
 ![gitlabhelper](./images/gitlabtree.png)
 
-[仓库](https://github.com/torrentjiang/gitlabhelper)
+[github](https://github.com/torrentjiang/gitlabhelper)
