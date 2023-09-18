@@ -1,5 +1,6 @@
 ---
 group: js-sdk
+toc: content
 ---
 
 # checkFileStatus.sdk

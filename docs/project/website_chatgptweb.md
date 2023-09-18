@@ -1,5 +1,6 @@
 ---
 group: website
+toc: content
 ---
 
 # ChatGPT-web

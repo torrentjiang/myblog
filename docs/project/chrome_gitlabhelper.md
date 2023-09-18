@@ -1,5 +1,6 @@
 ---
 group: Chrome插件
+toc: content
 ---
 
 # gitlabhelper
