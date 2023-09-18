@@ -5,6 +5,10 @@ toc: content
 
 # checkFileStatus.sdk
 
+## 浏览器缓存机制
+
+[浏览器缓存机制](../work/browserCache.md)
+
 ## web 通用缓存检测脚本
 
 - 自动化检测项目的历史缓存
