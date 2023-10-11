@@ -221,28 +221,72 @@ class Child extends Parent {
 
 ```
 
+## 手写 call 和 apply
+
+```
+Function.prototype.call = function (context) {
+  // 将函数设为对象的属性
+  context = context ? Object(context) : window;
+  context.fn = this;
+
+  // 执行该函数
+  //arguments对象不是一个Array。它类似于Array，但除了length属性和索引元素之外没有任何Array属性。
+  //es5 将arguments转换为Array：
+  // const args = Array.prototype.slice.call(arguments, 1)
+  //es6
+  let args = [...arguments].slice(1);
+  let result = context.fn(...args);
+
+  // 删除该函数
+  delete context.fn
+  // 注意：函数是可以有返回值的
+  return result;
+}
+
+Function.prototype.apply = function (context, arr) {
+  context = context ? Object(context) : window;
+  context.fn = this;
+
+  let result;
+  if (!arr) {
+    result = context.fn();
+  } else {
+    result = context.fn(...arr);
+  }
+  delete context.fn
+  return result;
+}
+```
+
 ## 手写 bind
 
 ```
-Function.prototype.myBind = function (target,...outArgs) {
-  let target = target || {};
-  const symbolKey = Symbol();
-  target[symbolKey] = this;
-  return function (...innerArgs) {
-    const res = target[symbolKey](...outArgs, ...innerArgs); // outArgs和innerArgs都是一个数组，解构后传入函数
-    return res
+Function.prototype.myBind = function(context) {
+  // 调用 bind 的不是函数，需要抛出异常
+  if (typeof this !== "function") {
+    throw new Error("Function.prototype.bind - what is trying to be bound is not callable");
   }
+  const originalFunction = this; // 原始函数
+  const args = Array.prototype.slice.call(arguments, 1); // 获取除context外的参数
+
+  // 返回一个新函数
+  return function() {
+    const newArgs = args.concat(Array.prototype.slice.call(arguments)); // 合并绑定时的参数和新参数
+    originalFunction.apply(context, newArgs); // 在指定上下文中调用原始函数
+  };
+};
+
+// 示例用法
+const person = {
+  name: 'John',
+};
+
+function greet(greeting) {
+  console.log(`${greeting}, ${this.name}!`);
 }
-var a = {
-  name: "jtt"
-}
-var b = {
-  name: 'abc',
-  say() {
-    console.log(this.name)
-  }
-}
-b.say.myCall(a, 'def')
+
+const boundGreet = greet.myBind(person, 'Hello');
+boundGreet(); // 输出: Hello, John!
 ```
 
 ## 数组扁平化
@@ -270,6 +314,18 @@ function flatten(arr) {
   },[]);
 }
 
+var flatFncDepth = (arr, depth) => {
+  var flat = (arr, curentDepth) => {
+    if (depth === curentDepth) {
+      return arr
+    }
+    return arr.reduce((result, next)=>{
+      return result.concat(Array.isArray(next) ? flat(next, curentDepth + 1) : next)
+    },[])
+  }
+  return flat(arr, 0)
+}
+
 ```
 
 ## 实现 reduce 函数
@@ -283,6 +339,24 @@ Array.prototype.reduce = function (callback) {
   }
   return total;
 };
+
+function myReduce(arr, callback, initialValue) {
+  let accumulator = initialValue === undefined ? arr[0] : initialValue;
+  const startIndex = initialValue === undefined ? 1 : 0;
+
+  for (let i = startIndex; i < arr.length; i++) {
+    accumulator = callback(accumulator, arr[i], i, arr);
+  }
+
+  return accumulator;
+}
+
+// 示例用法
+const numbers = [1, 2, 3, 4, 5];
+
+const sum = myReduce(numbers, function (accumulator, currentValue) {
+  return accumulator + currentValue;
+}, 0);
 
 ```
 
